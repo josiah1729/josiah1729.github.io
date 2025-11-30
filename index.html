@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
         .iFrame {
             flex: 1;
             width: 100%;
@@ -13,25 +18,22 @@
     </style>
 </head>
 <body>
-    <iframe src="https://josiah1729.github.io/fuck-ai/main.html" id="iFrame" class="iFrame" frameborder="0"></iframe>
+    <iframe src="" id="iFrame" class="iFrame" frameborder="0">
+    </iframe>
+    <button onclick="start();">Activate</button>
     <script defer>
+            setTimeout(() => {
+                window.location.href = 'https://josiah1729.github.io/fuck-ai/main.html';
+            }, 1*60*60000);
             const frame = document.getElementById('iFrame');
 
-            function fullscreen() {
-                if (!document.fullscreenElement) {
-                    frame.requestFullscreen().catch(err => {
-                        // alert("Fullscreen failed: " + err);
-                    });
-                } else {
-                    // document.exitFullscreen();
-                }
+            function start() {
+                document.getElementById('iFrame').src = 'https://josiah1729.github.io/fuck-ai/main.html';
+                setTimeout(() => {
+                    frame.requestFullscreen();
+                }, 1);
             }
-            setTimeout(() => {
-                fullscreen();
-            }, 100);
-            setTimeout(() => {
-                fullscreen();
-            }, 10000);
+            start();
     </script>
 </body>
 </html>
